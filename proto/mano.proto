@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package proto;
+
+service Resources {
+    rpc GetResources (GetResourcesMessage) returns (ResourcesResponse) {}
+}
+
+message GetResourcesMessage {
+    string target_resource = 1;
+}
+
+message ResourcesResponse {
+    string id = 1;
+    string value = 2;
+}
