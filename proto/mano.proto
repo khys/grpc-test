@@ -12,9 +12,9 @@ message GetCpuMessage {
 }
 
 message CpuResponse {
-    string max = 32;
-    string used = 16;
-    string price = 8;
+    string max = 1;
+    string used = 2;
+    string price = 3;
 }
 
 message GetMemoryMessage {
@@ -22,7 +22,7 @@ message GetMemoryMessage {
 }
 
 message MemoryResponse {
-    string max = 128;
-    string used = 120;
-    string price = 2;
+    string max = 1;
+    string used = 2;
+    string price = 3;
 }

@@ -24,112 +24,220 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
-type GetResourcesMessage struct {
-	TargetResource       string   `protobuf:"bytes,1,opt,name=target_resource,json=targetResource,proto3" json:"target_resource,omitempty"`
+type GetCpuMessage struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
 }
 
-func (m *GetResourcesMessage) Reset()         { *m = GetResourcesMessage{} }
-func (m *GetResourcesMessage) String() string { return proto.CompactTextString(m) }
-func (*GetResourcesMessage) ProtoMessage()    {}
-func (*GetResourcesMessage) Descriptor() ([]byte, []int) {
+func (m *GetCpuMessage) Reset()         { *m = GetCpuMessage{} }
+func (m *GetCpuMessage) String() string { return proto.CompactTextString(m) }
+func (*GetCpuMessage) ProtoMessage()    {}
+func (*GetCpuMessage) Descriptor() ([]byte, []int) {
 	return fileDescriptor_93b48816c784b6db, []int{0}
 }
 
-func (m *GetResourcesMessage) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_GetResourcesMessage.Unmarshal(m, b)
+func (m *GetCpuMessage) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetCpuMessage.Unmarshal(m, b)
 }
-func (m *GetResourcesMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_GetResourcesMessage.Marshal(b, m, deterministic)
+func (m *GetCpuMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetCpuMessage.Marshal(b, m, deterministic)
 }
-func (m *GetResourcesMessage) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_GetResourcesMessage.Merge(m, src)
+func (m *GetCpuMessage) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetCpuMessage.Merge(m, src)
 }
-func (m *GetResourcesMessage) XXX_Size() int {
-	return xxx_messageInfo_GetResourcesMessage.Size(m)
+func (m *GetCpuMessage) XXX_Size() int {
+	return xxx_messageInfo_GetCpuMessage.Size(m)
 }
-func (m *GetResourcesMessage) XXX_DiscardUnknown() {
-	xxx_messageInfo_GetResourcesMessage.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_GetResourcesMessage proto.InternalMessageInfo
-
-func (m *GetResourcesMessage) GetTargetResource() string {
-	if m != nil {
-		return m.TargetResource
-	}
-	return ""
+func (m *GetCpuMessage) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetCpuMessage.DiscardUnknown(m)
 }
 
-type ResourcesResponse struct {
-	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	Value                string   `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
+var xxx_messageInfo_GetCpuMessage proto.InternalMessageInfo
 
-func (m *ResourcesResponse) Reset()         { *m = ResourcesResponse{} }
-func (m *ResourcesResponse) String() string { return proto.CompactTextString(m) }
-func (*ResourcesResponse) ProtoMessage()    {}
-func (*ResourcesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_93b48816c784b6db, []int{1}
-}
-
-func (m *ResourcesResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_ResourcesResponse.Unmarshal(m, b)
-}
-func (m *ResourcesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_ResourcesResponse.Marshal(b, m, deterministic)
-}
-func (m *ResourcesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_ResourcesResponse.Merge(m, src)
-}
-func (m *ResourcesResponse) XXX_Size() int {
-	return xxx_messageInfo_ResourcesResponse.Size(m)
-}
-func (m *ResourcesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_ResourcesResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_ResourcesResponse proto.InternalMessageInfo
-
-func (m *ResourcesResponse) GetId() string {
+func (m *GetCpuMessage) GetId() string {
 	if m != nil {
 		return m.Id
 	}
 	return ""
 }
 
-func (m *ResourcesResponse) GetValue() string {
+type CpuResponse struct {
+	Max                  string   `protobuf:"bytes,32,opt,name=max,proto3" json:"max,omitempty"`
+	Used                 string   `protobuf:"bytes,16,opt,name=used,proto3" json:"used,omitempty"`
+	Price                string   `protobuf:"bytes,8,opt,name=price,proto3" json:"price,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CpuResponse) Reset()         { *m = CpuResponse{} }
+func (m *CpuResponse) String() string { return proto.CompactTextString(m) }
+func (*CpuResponse) ProtoMessage()    {}
+func (*CpuResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_93b48816c784b6db, []int{1}
+}
+
+func (m *CpuResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CpuResponse.Unmarshal(m, b)
+}
+func (m *CpuResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CpuResponse.Marshal(b, m, deterministic)
+}
+func (m *CpuResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CpuResponse.Merge(m, src)
+}
+func (m *CpuResponse) XXX_Size() int {
+	return xxx_messageInfo_CpuResponse.Size(m)
+}
+func (m *CpuResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_CpuResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CpuResponse proto.InternalMessageInfo
+
+func (m *CpuResponse) GetMax() string {
 	if m != nil {
-		return m.Value
+		return m.Max
+	}
+	return ""
+}
+
+func (m *CpuResponse) GetUsed() string {
+	if m != nil {
+		return m.Used
+	}
+	return ""
+}
+
+func (m *CpuResponse) GetPrice() string {
+	if m != nil {
+		return m.Price
+	}
+	return ""
+}
+
+type GetMemoryMessage struct {
+	Id                   string   `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *GetMemoryMessage) Reset()         { *m = GetMemoryMessage{} }
+func (m *GetMemoryMessage) String() string { return proto.CompactTextString(m) }
+func (*GetMemoryMessage) ProtoMessage()    {}
+func (*GetMemoryMessage) Descriptor() ([]byte, []int) {
+	return fileDescriptor_93b48816c784b6db, []int{2}
+}
+
+func (m *GetMemoryMessage) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_GetMemoryMessage.Unmarshal(m, b)
+}
+func (m *GetMemoryMessage) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_GetMemoryMessage.Marshal(b, m, deterministic)
+}
+func (m *GetMemoryMessage) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_GetMemoryMessage.Merge(m, src)
+}
+func (m *GetMemoryMessage) XXX_Size() int {
+	return xxx_messageInfo_GetMemoryMessage.Size(m)
+}
+func (m *GetMemoryMessage) XXX_DiscardUnknown() {
+	xxx_messageInfo_GetMemoryMessage.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_GetMemoryMessage proto.InternalMessageInfo
+
+func (m *GetMemoryMessage) GetId() string {
+	if m != nil {
+		return m.Id
+	}
+	return ""
+}
+
+type MemoryResponse struct {
+	Max                  string   `protobuf:"bytes,128,opt,name=max,proto3" json:"max,omitempty"`
+	Used                 string   `protobuf:"bytes,120,opt,name=used,proto3" json:"used,omitempty"`
+	Price                string   `protobuf:"bytes,2,opt,name=price,proto3" json:"price,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *MemoryResponse) Reset()         { *m = MemoryResponse{} }
+func (m *MemoryResponse) String() string { return proto.CompactTextString(m) }
+func (*MemoryResponse) ProtoMessage()    {}
+func (*MemoryResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_93b48816c784b6db, []int{3}
+}
+
+func (m *MemoryResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_MemoryResponse.Unmarshal(m, b)
+}
+func (m *MemoryResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_MemoryResponse.Marshal(b, m, deterministic)
+}
+func (m *MemoryResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MemoryResponse.Merge(m, src)
+}
+func (m *MemoryResponse) XXX_Size() int {
+	return xxx_messageInfo_MemoryResponse.Size(m)
+}
+func (m *MemoryResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MemoryResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MemoryResponse proto.InternalMessageInfo
+
+func (m *MemoryResponse) GetMax() string {
+	if m != nil {
+		return m.Max
+	}
+	return ""
+}
+
+func (m *MemoryResponse) GetUsed() string {
+	if m != nil {
+		return m.Used
+	}
+	return ""
+}
+
+func (m *MemoryResponse) GetPrice() string {
+	if m != nil {
+		return m.Price
 	}
 	return ""
 }
 
 func init() {
-	proto.RegisterType((*GetResourcesMessage)(nil), "proto.GetResourcesMessage")
-	proto.RegisterType((*ResourcesResponse)(nil), "proto.ResourcesResponse")
+	proto.RegisterType((*GetCpuMessage)(nil), "proto.GetCpuMessage")
+	proto.RegisterType((*CpuResponse)(nil), "proto.CpuResponse")
+	proto.RegisterType((*GetMemoryMessage)(nil), "proto.GetMemoryMessage")
+	proto.RegisterType((*MemoryResponse)(nil), "proto.MemoryResponse")
 }
 
 func init() { proto.RegisterFile("proto/mano.proto", fileDescriptor_93b48816c784b6db) }
 
 var fileDescriptor_93b48816c784b6db = []byte{
-	// 164 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x28, 0x28, 0xca, 0x2f,
-	0xc9, 0xd7, 0xcf, 0x4d, 0xcc, 0xcb, 0xd7, 0x03, 0x33, 0x85, 0x58, 0xc1, 0x94, 0x92, 0x1d, 0x97,
-	0xb0, 0x7b, 0x6a, 0x49, 0x50, 0x6a, 0x71, 0x7e, 0x69, 0x51, 0x72, 0x6a, 0xb1, 0x6f, 0x6a, 0x71,
-	0x71, 0x62, 0x7a, 0xaa, 0x90, 0x3a, 0x17, 0x7f, 0x49, 0x62, 0x51, 0x7a, 0x6a, 0x49, 0x7c, 0x11,
-	0x54, 0x4a, 0x82, 0x51, 0x81, 0x51, 0x83, 0x33, 0x88, 0x0f, 0x22, 0x0c, 0xd3, 0xa0, 0x64, 0xc9,
-	0x25, 0x08, 0xd7, 0x1c, 0x94, 0x5a, 0x5c, 0x90, 0x9f, 0x57, 0x9c, 0x2a, 0xc4, 0xc7, 0xc5, 0x94,
-	0x99, 0x02, 0xd5, 0xc0, 0x94, 0x99, 0x22, 0x24, 0xc2, 0xc5, 0x5a, 0x96, 0x98, 0x53, 0x9a, 0x2a,
-	0xc1, 0x04, 0x16, 0x82, 0x70, 0x8c, 0x82, 0xb9, 0x38, 0xe1, 0x5a, 0x85, 0xdc, 0xb8, 0x78, 0x90,
-	0xdd, 0x21, 0x24, 0x05, 0x71, 0xa6, 0x1e, 0x16, 0xc7, 0x49, 0x49, 0x40, 0xe5, 0x30, 0x2c, 0x56,
-	0x62, 0x48, 0x62, 0x03, 0x4b, 0x19, 0x03, 0x02, 0x00, 0x00, 0xff, 0xff, 0xbf, 0x8c, 0xf6, 0x32,
-	0xf1, 0x00, 0x00, 0x00,
+	// 227 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x74, 0x90, 0x31, 0x4f, 0x85, 0x30,
+	0x14, 0x85, 0x1f, 0xe8, 0x7b, 0x79, 0xef, 0x1a, 0x49, 0xbd, 0xc1, 0xd8, 0xb0, 0x48, 0x3a, 0x39,
+	0x61, 0xa2, 0xae, 0x4e, 0x0c, 0xc4, 0x81, 0x85, 0x7f, 0x80, 0x70, 0x63, 0x18, 0xa0, 0x4d, 0x4b,
+	0x13, 0x9c, 0xf4, 0xa7, 0x1b, 0x5b, 0x82, 0x10, 0x75, 0xea, 0xe9, 0xb9, 0x6d, 0xbe, 0x73, 0x2e,
+	0x30, 0xa5, 0xe5, 0x28, 0xef, 0xfb, 0x7a, 0x90, 0x99, 0x93, 0xb8, 0x77, 0x87, 0xb8, 0x85, 0xcb,
+	0x82, 0xc6, 0x5c, 0xd9, 0x92, 0x8c, 0xa9, 0xdf, 0x08, 0x23, 0x08, 0xbb, 0x96, 0x07, 0x69, 0x70,
+	0x77, 0xaa, 0xc2, 0xae, 0x15, 0x2f, 0x70, 0x91, 0x2b, 0x5b, 0x91, 0x51, 0x72, 0x30, 0x84, 0x0c,
+	0xce, 0xfa, 0x7a, 0xe2, 0xa9, 0x9b, 0x7f, 0x4b, 0x44, 0x38, 0xb7, 0x86, 0x5a, 0xce, 0x9c, 0xe5,
+	0x34, 0xc6, 0xb0, 0x57, 0xba, 0x6b, 0x88, 0x1f, 0x9d, 0xe9, 0x2f, 0x42, 0x00, 0x2b, 0x68, 0x2c,
+	0xa9, 0x97, 0xfa, 0xfd, 0x3f, 0x5c, 0x09, 0x91, 0x7f, 0xb0, 0x10, 0xaf, 0x3c, 0xf1, 0x33, 0xf8,
+	0x8d, 0x9c, 0xfe, 0x42, 0x86, 0x2b, 0xe4, 0xc3, 0x07, 0x1c, 0x2b, 0x32, 0xd2, 0xea, 0x86, 0xf0,
+	0x09, 0x0e, 0xbe, 0x2a, 0xc6, 0x7e, 0x07, 0xd9, 0xa6, 0x79, 0x82, 0xb3, 0xbb, 0xaa, 0x2b, 0x76,
+	0xf8, 0x0c, 0xa7, 0x25, 0x34, 0xde, 0xfc, 0x7c, 0xdc, 0xd4, 0x48, 0xae, 0xe7, 0xc1, 0x36, 0xbb,
+	0xd8, 0xbd, 0x1e, 0x9c, 0xff, 0xf8, 0x15, 0x00, 0x00, 0xff, 0xff, 0xcc, 0xcd, 0x7f, 0x30, 0x81,
+	0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -140,72 +248,108 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// ResourcesClient is the client API for Resources service.
+// ResourceClient is the client API for Resource service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type ResourcesClient interface {
-	GetResources(ctx context.Context, in *GetResourcesMessage, opts ...grpc.CallOption) (*ResourcesResponse, error)
+type ResourceClient interface {
+	GetCpu(ctx context.Context, in *GetCpuMessage, opts ...grpc.CallOption) (*CpuResponse, error)
+	GetMemory(ctx context.Context, in *GetMemoryMessage, opts ...grpc.CallOption) (*MemoryResponse, error)
 }
 
-type resourcesClient struct {
+type resourceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewResourcesClient(cc *grpc.ClientConn) ResourcesClient {
-	return &resourcesClient{cc}
+func NewResourceClient(cc *grpc.ClientConn) ResourceClient {
+	return &resourceClient{cc}
 }
 
-func (c *resourcesClient) GetResources(ctx context.Context, in *GetResourcesMessage, opts ...grpc.CallOption) (*ResourcesResponse, error) {
-	out := new(ResourcesResponse)
-	err := c.cc.Invoke(ctx, "/proto.Resources/GetResources", in, out, opts...)
+func (c *resourceClient) GetCpu(ctx context.Context, in *GetCpuMessage, opts ...grpc.CallOption) (*CpuResponse, error) {
+	out := new(CpuResponse)
+	err := c.cc.Invoke(ctx, "/proto.Resource/GetCpu", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ResourcesServer is the server API for Resources service.
-type ResourcesServer interface {
-	GetResources(context.Context, *GetResourcesMessage) (*ResourcesResponse, error)
+func (c *resourceClient) GetMemory(ctx context.Context, in *GetMemoryMessage, opts ...grpc.CallOption) (*MemoryResponse, error) {
+	out := new(MemoryResponse)
+	err := c.cc.Invoke(ctx, "/proto.Resource/GetMemory", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
-// UnimplementedResourcesServer can be embedded to have forward compatible implementations.
-type UnimplementedResourcesServer struct {
+// ResourceServer is the server API for Resource service.
+type ResourceServer interface {
+	GetCpu(context.Context, *GetCpuMessage) (*CpuResponse, error)
+	GetMemory(context.Context, *GetMemoryMessage) (*MemoryResponse, error)
 }
 
-func (*UnimplementedResourcesServer) GetResources(ctx context.Context, req *GetResourcesMessage) (*ResourcesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetResources not implemented")
+// UnimplementedResourceServer can be embedded to have forward compatible implementations.
+type UnimplementedResourceServer struct {
 }
 
-func RegisterResourcesServer(s *grpc.Server, srv ResourcesServer) {
-	s.RegisterService(&_Resources_serviceDesc, srv)
+func (*UnimplementedResourceServer) GetCpu(ctx context.Context, req *GetCpuMessage) (*CpuResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCpu not implemented")
+}
+func (*UnimplementedResourceServer) GetMemory(ctx context.Context, req *GetMemoryMessage) (*MemoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetMemory not implemented")
 }
 
-func _Resources_GetResources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(GetResourcesMessage)
+func RegisterResourceServer(s *grpc.Server, srv ResourceServer) {
+	s.RegisterService(&_Resource_serviceDesc, srv)
+}
+
+func _Resource_GetCpu_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetCpuMessage)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ResourcesServer).GetResources(ctx, in)
+		return srv.(ResourceServer).GetCpu(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/proto.Resources/GetResources",
+		FullMethod: "/proto.Resource/GetCpu",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ResourcesServer).GetResources(ctx, req.(*GetResourcesMessage))
+		return srv.(ResourceServer).GetCpu(ctx, req.(*GetCpuMessage))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Resources_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "proto.Resources",
-	HandlerType: (*ResourcesServer)(nil),
+func _Resource_GetMemory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetMemoryMessage)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ResourceServer).GetMemory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.Resource/GetMemory",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ResourceServer).GetMemory(ctx, req.(*GetMemoryMessage))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Resource_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "proto.Resource",
+	HandlerType: (*ResourceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "GetResources",
-			Handler:    _Resources_GetResources_Handler,
+			MethodName: "GetCpu",
+			Handler:    _Resource_GetCpu_Handler,
+		},
+		{
+			MethodName: "GetMemory",
+			Handler:    _Resource_GetMemory_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

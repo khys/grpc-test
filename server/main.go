@@ -15,6 +15,6 @@ func main() {
 	}
 	server := grpc.NewServer()
 	resourceService := &service.ResourceService{}
-	proto.RegisterResourcesServer(server, resourceService)
+	proto.RegisterResourceServer(server, resourceService)
 	server.Serve(listenPort)
 }
