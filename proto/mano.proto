@@ -2,15 +2,27 @@ syntax = "proto3";
 
 package proto;
 
-service Resources {
-    rpc GetResources (GetResourcesMessage) returns (ResourcesResponse) {}
+service Resource {
+    rpc GetCpu (GetCpuMessage) returns (CpuResponse) {}
+    rpc GetMemory (GetMemoryMessage) returns (MemoryResponse) {}
 }
 
-message GetResourcesMessage {
-    string target_resource = 1;
-}
-
-message ResourcesResponse {
+message GetCpuMessage {
     string id = 1;
-    string value = 2;
+}
+
+message CpuResponse {
+    string max = 32;
+    string used = 16;
+    string price = 8;
+}
+
+message GetMemoryMessage {
+    string id = 1;
+}
+
+message MemoryResponse {
+    string max = 128;
+    string used = 120;
+    string price = 2;
 }
